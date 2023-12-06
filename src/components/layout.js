@@ -2,10 +2,9 @@ import { Outlet } from "react-router-dom";
 
 import React from 'react'
 
-export const layout = () => {
+export default function layout() {
   return (
-      <main>
-          <Outlet/>
-    </main>
+    <main><Outlet/></main>
   )
 }
+

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import getAllData from './api/axiosConfig';
-import Layout from "./components/layout";
+import Layout from './components/layout';
 import { Routes, Route } from 'react-router-dom';
+import Home from './components/home/Home';
 
 
 function App() {
@@ -14,19 +15,17 @@ function App() {
   
   return (
     <>
-      {movies.map((movie) => (
-        <>
-          <div className='App'>
-            <Routes>
-              <Route path='/' element={Layout}>
-                
-              </Route>
-            </Routes>
-          </div>
-        </>
-      ))}
+
+      <div className='App'>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route path='/' element={<Home />}></Route>
+          </Route>
+        </Routes>
+      </div>
+
     </>
-  )
+  );
 }
 
 export default App;
