@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import getAllData from './api/axiosConfig';
+import Layout from "./components/layout";
+import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -14,8 +16,12 @@ function App() {
     <>
       {movies.map((movie) => (
         <>
-          <div>
-            <h2>{ movie.title}</h2>
+          <div className='App'>
+            <Routes>
+              <Route path='/' element={Layout}>
+                
+              </Route>
+            </Routes>
           </div>
         </>
       ))}
