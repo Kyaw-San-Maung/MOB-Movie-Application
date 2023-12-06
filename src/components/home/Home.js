@@ -1,10 +1,7 @@
 import React from 'react'
+import Hero from '../hero/Hero'
 
-export default function Home() {
-  return (
-      <>
-          <h2>Welcome</h2>
-      </>
-  )
+export default function Home({movies}) {
+  return <Hero movies={movies}/>
 }
 
