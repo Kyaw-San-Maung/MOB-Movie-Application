@@ -2,6 +2,7 @@ import React from 'react';
 import '../hero/Hero.css';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 export default function Hero({movies}) {
@@ -22,9 +23,11 @@ export default function Hero({movies}) {
                                               <h4>{movie.title}</h4>
                                           </div>
                                           <div className='movie-buttons-container'>
+                                              <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>
                                               <div className='play-button-icon-container'>
                                               <i class="fa-solid fa-circle-play"></i>
-                                              </div>
+                                                  </div>
+                                                  </Link>
                                           </div>
                                       </div>
                                   </div>
