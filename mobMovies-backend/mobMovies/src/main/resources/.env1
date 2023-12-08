@@ -1,0 +1,4 @@
+MONGO_DATABASE="movie-api-db"
+MONGO_USER="KyawSanMaung"
+MONGO_PASSWORD="Q6aPPUjcmkU6biqE"
+MONGO_CULSTER="@cluster0.exwguer.mongodb.net"
