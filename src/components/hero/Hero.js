@@ -2,10 +2,17 @@ import React from 'react';
 import '../hero/Hero.css';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
-export default function Hero({movies}) {
+export default function Hero({ movies }) {
+    
+    const navigate = useNavigate();
+
+    function reviews(movieId) {
+        navigate(`/Reviews/${movieId}`)
+    }
   return (
       <>
           <Carousel>
@@ -27,7 +34,11 @@ export default function Hero({movies}) {
                                               <div className='play-button-icon-container'>
                                               <i class="fa-solid fa-circle-play"></i>
                                                   </div>
-                                                  </Link>
+                                              </Link>
+                                              
+                                              <div className='movie-review-button-container'>
+                                                  <Button variant='info' onClick={() => reviews(movie.imbId)}>Reviews</Button>
+                                              </div>
                                           </div>
                                       </div>
                                   </div>
