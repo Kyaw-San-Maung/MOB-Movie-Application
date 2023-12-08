@@ -1,33 +1,30 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import getAllData from './api/axiosConfig';
-import Layout from './components/layout';
-import { Routes, Route } from 'react-router-dom';
-import Home from './components/home/Home';
-import Header from './components/header/header';
-import Trailer from './components/trailer/Trailer';
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import getAllData from "./api/axiosConfig";
+import Layout from "./components/layout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import Header from "./components/header/header";
+import Trailer from "./components/trailer/Trailer";
 
 function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     getAllData().then((res) => setMovies(res.data));
-  },[])
-  
+  }, []);
+
   return (
     <>
-
-      <div className='App'>
-        <Header/>
+      <div className="App">
+        <Header />
         <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route path='/' element={<Home movies={movies} />}></Route>
-            <Route path='/Trailer/:ytTrailerId' element={<Trailer />}></Route>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home movies={movies} />}></Route>
+            <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
           </Route>
         </Routes>
       </div>
-
     </>
   );
 }
